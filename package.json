@@ -1,0 +1,24 @@
+{
+  "name": "erablue-sales-contest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "test": "node --test tests-js/*.test.mjs",
+    "audit:repo": "node scripts/audit-git.mjs",
+    "check": "npm test && npm run build",
+    "deploy": "wrangler pages deploy dist --project-name sales-contest",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami"
+  },
+  "dependencies": {
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1",
+    "wrangler": "^4.144.0"
+  }
+}
